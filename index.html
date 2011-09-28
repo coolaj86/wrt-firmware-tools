@@ -49,54 +49,82 @@
       This kit allows for easy deconstruction and reconsutrction of firmware images for various embedded devices
     </div>
 
-    <p>This kit gives the user the ability to make changes to a firmware image without recompiling the firmware sources. It works by extracting the firmware into its component parts, then extracting the file system image. The user can then make modifications to the extracted file system, then rebuild the firmware image.
+  <p>
+NO GUARANTEE IS PROVIDED. WITH EVERY REBUILT IMAGE YOU STAND THE CHANCE OF **BRICKING YOUR DEVICE** (EITHER A SOFT OR HARD BRICK). DO NOT USE THIS TOOL IF YOU CAN NOT RECOVER FROM SUCH A BRICK. BY USING THIS TOOL YOU ASSUME LIABILITY OF ALL DAMAGES, TANGIBLE AND INTANGIBLE, RESULTING FROM THE USE OR MIS-USE OF THIS SOFTWARE.
+  </p>
 
-It is most useful for quick debugging of problems without having to rebuild the entire firmware image. It can even be deployed 'on the road'. A variety of formats are supported, mainly linux based GPL images known to be around; additionally, it can be used to customize DD-WRT web GUIs.
 
-We've written a few custom utilities (i.e. untrx, wrt_vx_imgtool, spliter3) to support various devices. We've also made modifications to squashfs-tools and added known variants of squashfs-tools.
+  <p>
+READ THE ABOVE AGAIN BEFORE USING THIS SOFTWARE. **YOU ARE GOING TO BRICK YOUR ROUTER**. WHILE YOU MAY NOT, IT IS BETTER WE SAY YOU WILL SO THAT YOU UNDERSTAND THE RISK. MOST BRICKS ARE RECOVERABLE, BUT NOT ALL.
+  </p>
 
-Recently, Binwalk was also integrated, to help identify and support even more firmware types and segment/filesystem types.
+    <p>This kit gives the user the ability to make changes to a firmware image without recompiling the firmware sources. It works by extracting the firmware into its component parts, then extracting the file system image. The user can then make modifications to the extracted file system, then rebuild the firmware image.</p>
 
-Un-guaranteed support fir firmware image formats for the following devices:
+  <p>It is most useful for quick debugging of problems without having to rebuild the entire firmware image. It can even be deployed 'on the road'. A variety of formats are supported, mainly linux based GPL images known to be around; additionally, it can be used to customize DD-WRT web GUIs.</p>
 
-WRT54G v1 - v6
-WRT54GS v1 - v6
-WRTSL54G v?
-M10 (Cisco Valet)
-ASUS WL-330g
-ASUS WL-500g/p
-ASUS WL-520g
-ASUS WL-530g
-Belkin 7230-4 (some versions)
-Belkin 7231-4 (?)
-Buffalo WHR-G54S
-Buffalo WHR-HP-G54
-Siemens SE505
-Trendnet TEW-632BRP
-D-Link DIR615 (maybe, untested)
-many others..
+  <p>We've written a few custom utilities (i.e. untrx, wrt_vx_imgtool, spliter3) to support various devices. We've also made modifications to squashfs-tools and added known variants of squashfs-tools.</p>
+
+  <p>Recently, Binwalk was also integrated, to help identify and support even more firmware types and segment/filesystem types.</p>
+
+<p>Un-guaranteed support for firmware image formats for the following devices:</p>
+
+<ul>
+  <li>WRT54G v1 - v6</li>
+  <li>WRT54GS v1 - v6</li>
+  <li>WRTSL54G v?</li>
+  <li>M10 (Cisco Valet)</li>
+  <li>ASUS WL-330g</li>
+  <li>ASUS WL-500g/p</li>
+  <li>ASUS WL-520g</li>
+  <li>ASUS WL-530g</li>
+  <li>Belkin 7230-4 (some versions)</li>
+  <li>Belkin 7231-4 (?)</li>
+  <li>Buffalo WHR-G54S</li>
+  <li>Buffalo WHR-HP-G54</li>
+  <li>Siemens SE505</li>
+  <li>Trendnet TEW-632BRP</li>
+  <li>D-Link DIR615 (maybe, untested)</li>
+  <li>many others..</li>
+</ul>
+
 Some specific firmware types:
 
-OpenWrt
-Tomato
-X-Wrt
-DD-WRT v23 for all models
-DD-WRT v24 SP1+ (for some models ONLY)
+<ul>
+  <li>OpenWrt</li>
+  <li>Tomato</li>
+  <li>X-Wrt</li>
+  <li>DD-WRT v23 for all models</li>
+  <li>DD-WRT v24 SP1+ (for some models ONLY)</li>
+</ul>
+
 The following filesystems can be extracted and assembled:
 
-squashfs 2.x (zlib)
-squashfs 2.x (lzma)
-squashfs 3.x (zlib)
-squashfs 3.x (lzma)
-squashfs 3.x (lzma with prepended encoding params)
-squashfs 3.x (lzma with other variations)
-JFFS2
-cramfs (zlib)</p><h2>Dependencies</h2>
-<p>build-essential
-libz1g-dev</p>
-<h2>Install</h2>
-<p>Tested on Ubuntu 11.04 32-bit and 64-bit
+<ul>
+  <li>squashfs 2.x (zlib)</li>
+  <li>squashfs 2.x (lzma)</li>
+  <li>squashfs 3.x (zlib)</li>
+  <li>squashfs 3.x (lzma)</li>
+  <li>squashfs 3.x (lzma with prepended encoding params)</li>
+  <li>squashfs 3.x (lzma with other variations)</li>
+  <li>JFFS2</li>
+  <li>cramfs (zlib)</li>
+</ul>
 
+<a href="http://www.bitsum.com/firmware_mod_kit.htm">The Old Documentation</a>
+
+</p>
+
+<h2>Dependencies</h2>
+<p>
+<ul>
+  <li>build-essential</li>
+  <li>libz1g-dev</li>
+</ul>
+</p>
+
+<h2>Install</h2>
+<p>Tested on fresh VirtualBox installs of Ubuntu 11.04 32-bit and 64-bit
+<pre>
     sudo apt-get update
     sudo apt-get upgrade -y
     sudo apt-get install -y \
@@ -112,13 +140,15 @@ libz1g-dev</p>
     mkdir Code
     cd ~/Code
     git clone git://github.com/coolaj86/wrt-firmware-tools.git
-    cd firmware-mod-kit-read-only/trunk</p>
+    cd firmware-mod-kit-read-only/trunk
+</pre>
+</p>
 <h2>License</h2>
 <p>GNU GPL v2</p>
 <h2>Authors</h2>
-<p>Craig Heffner <heffnercj@gmail.com><br/>Jeremy Collake <jeremy.collake@gmail.com><br/>Michael Tiernan <michael.tiernan@gmail.com></p>
+<p>Craig Heffner &lt;heffnercj@gmail.com><br/>Jeremy Collake &lt;jeremy.collake@gmail.com><br/>Michael Tiernan &lt;michael.tiernan@gmail.com></p>
 <h2>Contact</h2>
-<p>Craig Heffner <heffnercj@gmail.com></p>
+<p>Craig Heffner &lt;heffnercj@gmail.com></p>
 
 
     <h2>Download</h2>
