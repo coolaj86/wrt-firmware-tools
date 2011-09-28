@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+
+  <title>coolaj86/wrt-firmware-tools @ GitHub</title>
+
+  <style type="text/css">
+    body {
+      margin-top: 1.0em;
+      background-color: #8bd2f4;
+      font-family: Helvetica, Arial, FreeSans, san-serif;
+      color: #000000;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+    h1 { font-size: 3.8em; color: #742d0b; margin-bottom: 3px; }
+    h1 .small { font-size: 0.4em; }
+    h1 a { text-decoration: none }
+    h2 { font-size: 1.5em; color: #742d0b; }
+    h3 { text-align: center; color: #742d0b; }
+    a { color: #742d0b; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+    pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+  </style>
+</head>
+
+<body>
+  <a href="http://github.com/coolaj86/wrt-firmware-tools"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/coolaj86/wrt-firmware-tools/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/coolaj86/wrt-firmware-tools/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="http://github.com/coolaj86/wrt-firmware-tools">wrt-firmware-tools</a>
+      <span class="small">by <a href="http://github.com/coolaj86">coolaj86</a></span></h1>
+
+    <div class="description">
+      This kit allows for easy deconstruction and reconsutrction of firmware images for various embedded devices
+    </div>
+
+    <p>This kit gives the user the ability to make changes to a firmware image without recompiling the firmware sources. It works by extracting the firmware into its component parts, then extracting the file system image. The user can then make modifications to the extracted file system, then rebuild the firmware image.
+
+It is most useful for quick debugging of problems without having to rebuild the entire firmware image. It can even be deployed 'on the road'. A variety of formats are supported, mainly linux based GPL images known to be around; additionally, it can be used to customize DD-WRT web GUIs.
+
+We've written a few custom utilities (i.e. untrx, wrt_vx_imgtool, spliter3) to support various devices. We've also made modifications to squashfs-tools and added known variants of squashfs-tools.
+
+Recently, Binwalk was also integrated, to help identify and support even more firmware types and segment/filesystem types.
+
+Un-guaranteed support fir firmware image formats for the following devices:
+
+WRT54G v1 - v6
+WRT54GS v1 - v6
+WRTSL54G v?
+M10 (Cisco Valet)
+ASUS WL-330g
+ASUS WL-500g/p
+ASUS WL-520g
+ASUS WL-530g
+Belkin 7230-4 (some versions)
+Belkin 7231-4 (?)
+Buffalo WHR-G54S
+Buffalo WHR-HP-G54
+Siemens SE505
+Trendnet TEW-632BRP
+D-Link DIR615 (maybe, untested)
+many others..
+Some specific firmware types:
+
+OpenWrt
+Tomato
+X-Wrt
+DD-WRT v23 for all models
+DD-WRT v24 SP1+ (for some models ONLY)
+The following filesystems can be extracted and assembled:
+
+squashfs 2.x (zlib)
+squashfs 2.x (lzma)
+squashfs 3.x (zlib)
+squashfs 3.x (lzma)
+squashfs 3.x (lzma with prepended encoding params)
+squashfs 3.x (lzma with other variations)
+JFFS2
+cramfs (zlib)</p><h2>Dependencies</h2>
+<p>build-essential
+libz1g-dev</p>
+<h2>Install</h2>
+<p>Tested on Ubuntu 11.04 32-bit and 64-bit
+
+    sudo apt-get update
+    sudo apt-get upgrade -y
+    sudo apt-get install -y \
+      virtualbox-ose-guest-utils \
+      build-essential \
+      subversion \
+      unrar \
+      wget \
+      curl \
+      git \
+      vim
+
+    mkdir Code
+    cd ~/Code
+    git clone git://github.com/coolaj86/wrt-firmware-tools.git
+    cd firmware-mod-kit-read-only/trunk</p>
+<h2>License</h2>
+<p>GNU GPL v2</p>
+<h2>Authors</h2>
+<p>Craig Heffner <heffnercj@gmail.com><br/>Jeremy Collake <jeremy.collake@gmail.com><br/>Michael Tiernan <michael.tiernan@gmail.com></p>
+<h2>Contact</h2>
+<p>Craig Heffner <heffnercj@gmail.com></p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/coolaj86/wrt-firmware-tools/zipball/master">zip</a> or
+      <a href="http://github.com/coolaj86/wrt-firmware-tools/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/coolaj86/wrt-firmware-tools</pre>
+    </p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/coolaj86/wrt-firmware-tools">coolaj86/wrt-firmware-tools</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>
