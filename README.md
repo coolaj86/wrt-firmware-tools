@@ -1,7 +1,2 @@
-Officially Maintained at <http://code.google.com/p/firmware-mod-kit/>
-
-If you're reading this on github, this fork is for AJ's own ease of use.
-
-I, AJ,  have made no significant contributions.
-
-Raise issues and commit at Google Code.
+# Moved
+### [wrt-firmware-tools](https://git.daplie.com/coolaj86/wrt-firmware-tools) is now at [git.daplie.com/coolaj86/wrt-firmware-tools](https://git.daplie.com/coolaj86/wrt-firmware-tools)
